@@ -52,6 +52,7 @@ jaya-jaya-institut/
 ### Step 1 — Clone / Siapkan Folder Proyek
 
 Pastikan semua file berikut sudah ada dalam satu folder:
+
 - `notebook.ipynb`
 - `app.py`
 - `retrain.py`
@@ -94,21 +95,23 @@ jupyter notebook notebook.ipynb
 ```
 
 Jalankan semua cell dari atas ke bawah. Notebook ini mencakup:
+
 - Data Understanding & pemeriksaan missing value
 - Exploratory Data Analysis (EDA) lengkap
 - Data Preparation & preprocessing pipeline
 - Modeling & training Random Forest
 - Evaluation (Accuracy, Classification Report, Confusion Matrix)
 
-### Step 5 — Retrain Model (Wajib dilakukan sekali)
+### Step 5 — Retrain Model (Tambahan file model)
 
-> ⚠️ **Penting**: Langkah ini wajib dilakukan agar model kompatibel dengan versi scikit-learn yang terinstall di PC kamu. Jika dilewati, Streamlit app akan error saat prediksi.
+> ⚠️ **Penting**: Tambahan agar model kompatibel dengan versi scikit-learn yang terinstall.
 
 ```bash
 python retrain.py
 ```
 
 Output yang diharapkan:
+
 ```
 Training model...
 ✅ Model berhasil disimpan!
@@ -117,6 +120,7 @@ Training model...
 ```
 
 Setelah step ini, dua file berikut akan dibuat/diperbarui:
+
 - `model_student.pkl`
 - `label_encoder.pkl`
 
@@ -139,12 +143,14 @@ docker run -d -p 3000:3000 --name metabase metabase/metabase
 Buka browser dan akses: `http://localhost:3000`
 
 Login dengan:
+
 ```
 Email    : aridp12367@gmail.com
 Password : @kuy_ari639
 ```
 
 Kemudian:
+
 1. Hubungkan Metabase ke database PostgreSQL (Supabase)
 2. Upload `data.csv` ke Supabase sebagai tabel
 3. Buat questions dan dashboard sesuai panduan di bawah
@@ -157,18 +163,19 @@ git init
 git add .
 git commit -m "student dropout predictor"
 git branch -M main
-git remote add origin https://github.com/username/jaya-jaya-institut.git
+git remote add origin https://github.com/Ariiajaa/Dashboard_student
 git push -u origin main
 ```
 
 Kemudian:
+
 1. Buka [share.streamlit.io](https://share.streamlit.io)
 2. Login dengan akun GitHub
 3. Klik **New app**
 4. Pilih repository, branch `main`, main file `app.py`
 5. Klik **Deploy**
 
-🔗 **Link Streamlit App**: [https://jaya-jaya-institut-dropout-predictor.streamlit.app](https://jaya-jaya-institut-dropout-predictor.streamlit.app)
+🔗 **Link Streamlit App**: https://dashboardstudent-gjplmoxlbg2rpcaqhpxdru.streamlit.app/
 
 ---
 
@@ -178,23 +185,23 @@ Dashboard dibuat menggunakan **Metabase** yang terhubung dengan database **Postg
 
 **Visualisasi yang tersedia:**
 
-| No | Visualisasi | Jenis Chart | Tujuan |
-|---|---|---|---|
-| 1 | Total Mahasiswa | KPI Card | Overview jumlah mahasiswa |
-| 2 | Total Dropout | KPI Card | Jumlah mahasiswa yang dropout |
-| 3 | Total Graduate | KPI Card | Jumlah mahasiswa yang lulus |
-| 4 | Dropout Rate (%) | KPI Card | Persentase dropout keseluruhan |
-| 5 | Distribusi Status | Pie Chart | Proporsi Graduate / Enrolled / Dropout |
-| 6 | Dropout Rate by Tuition Fees | Bar Chart | Pengaruh pembayaran UKT terhadap dropout |
-| 7 | Status by Scholarship | Stacked Bar | Pengaruh beasiswa terhadap status |
-| 8 | Status by Debtor | Stacked Bar | Pengaruh tunggakan terhadap dropout |
-| 9 | Rata-rata Nilai Sem 1 & 2 per Status | Grouped Bar | Performa akademik per status |
-| 10 | Rata-rata Unit Disetujui per Status | Grouped Bar | Jumlah SKS lulus per status |
-| 11 | Dropout Rate by Gender | Bar Chart | Perbandingan dropout berdasarkan gender |
-| 12 | Rata-rata Usia Pendaftaran per Status | Bar Chart | Pola usia mahasiswa per status |
-| 13 | Dropout Rate by Course (Top 10) | Horizontal Bar | Program studi dengan dropout tertinggi |
-| 14 | Status by Waktu Kuliah | Stacked Bar 100% | Pengaruh waktu kuliah terhadap status |
-| 15 | Rata-rata Admission Grade per Status | Bar Chart | Nilai masuk vs status kelulusan |
+| No  | Visualisasi                           | Jenis Chart      | Tujuan                                   |
+| --- | ------------------------------------- | ---------------- | ---------------------------------------- |
+| 1   | Total Mahasiswa                       | KPI Card         | Overview jumlah mahasiswa                |
+| 2   | Total Dropout                         | KPI Card         | Jumlah mahasiswa yang dropout            |
+| 3   | Total Graduate                        | KPI Card         | Jumlah mahasiswa yang lulus              |
+| 4   | Dropout Rate (%)                      | KPI Card         | Persentase dropout keseluruhan           |
+| 5   | Distribusi Status                     | Pie Chart        | Proporsi Graduate / Enrolled / Dropout   |
+| 6   | Dropout Rate by Tuition Fees          | Bar Chart        | Pengaruh pembayaran UKT terhadap dropout |
+| 7   | Status by Scholarship                 | Stacked Bar      | Pengaruh beasiswa terhadap status        |
+| 8   | Status by Debtor                      | Stacked Bar      | Pengaruh tunggakan terhadap dropout      |
+| 9   | Rata-rata Nilai Sem 1 & 2 per Status  | Grouped Bar      | Performa akademik per status             |
+| 10  | Rata-rata Unit Disetujui per Status   | Grouped Bar      | Jumlah SKS lulus per status              |
+| 11  | Dropout Rate by Gender                | Bar Chart        | Perbandingan dropout berdasarkan gender  |
+| 12  | Rata-rata Usia Pendaftaran per Status | Bar Chart        | Pola usia mahasiswa per status           |
+| 13  | Dropout Rate by Course (Top 10)       | Horizontal Bar   | Program studi dengan dropout tertinggi   |
+| 14  | Status by Waktu Kuliah                | Stacked Bar 100% | Pengaruh waktu kuliah terhadap status    |
+| 15  | Rata-rata Admission Grade per Status  | Bar Chart        | Nilai masuk vs status kelulusan          |
 
 **Akses Dashboard:**
 
