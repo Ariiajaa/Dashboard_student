@@ -136,19 +136,40 @@ Buka browser dan akses: `http://localhost:8501`
 
 ### Step 7 — Setup Business Dashboard (Metabase)
 
+## 🚀 Cara Menjalankan Dashboard Metabase
+
+###1. Versi Metabase
+Project ini menggunakan:
+Metabase v0.46.6
+
+---
+
+###2. Pull Image Metabase
+
 ```bash
-# Pull dan jalankan Metabase via Docker
-docker pull metabase/metabase
-docker run -d -p 3000:3000 --name metabase metabase/metabase
-```
+docker pull metabase/metabase:v0.46.6
 
-Buka browser dan akses: `http://localhost:3000`
+###3. Menjalankan Container
+docker run -d -p 3000:3000 --name metabase_container metabase/metabase:v0.46.6
 
-Login dengan:
+###4. Copy Database Metabase
+docker cp metabase.db.mv.db metabase_container:/metabase.db/metabase.db.mv.db
 
-```
-Email    : aridp12367@gmail.com
-Password : ari_Kuyy721
+###5. Restart Container
+docker restart metabase_container
+
+###6. Akses Dashboard
+
+Buka browser:
+http://localhost:3000
+
+###7. Login ke Metabase
+
+Gunakan akun berikut:
+Email   :   aridp12367@gmail.com
+Password:   ari_Kuyy721
+
+
 ```
 
 Kemudian:
@@ -177,9 +198,7 @@ Kemudian:
 4. Pilih repository, branch `main`, main file `app.py`
 5. Klik **Deploy**
 
-🔗 **Link Streamlit App**: https://jaya-jaya-institut-dropout-predictor.streamlit.app
-
----
+## 🔗 **Link Streamlit App**:https://dashboardstudent-gjplmoxlbg2rpcaqhpxdru.streamlit.app/
 
 ## Business Dashboard
 
