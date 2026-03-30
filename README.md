@@ -86,7 +86,7 @@ scikit-learn
 joblib
 ```
 
-> **Catatan**: Tidak perlu pin versi spesifik. Script `retrain.py` akan menyesuaikan model dengan versi sklearn yang terinstall di environment kamu.
+> **Catatan**: Tidak perlu pin versi spesifik. Script `retrain.py` akan menyesuaikan model dengan versi sklearn yang terinstall di environment
 
 ### Step 4 — Jalankan Notebook Analisis
 
@@ -105,7 +105,7 @@ Jalankan semua cell dari atas ke bawah. Notebook ini mencakup:
 
 ### Step 5 — Retrain Model (Wajib dilakukan sekali)
 
-> ⚠️ **Penting**: Langkah ini wajib dilakukan agar model kompatibel dengan versi scikit-learn yang terinstall di PC kamu. Jika dilewati, Streamlit app akan error saat prediksi.
+> ⚠️ **Penting**: Langkah ini wajib dilakukan agar model kompatibel dengan versi scikit-learn yang terinstall. Jika dilewati, Streamlit app akan error saat prediksi.
 
 ```bash
 python retrain.py
