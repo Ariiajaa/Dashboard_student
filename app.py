@@ -30,13 +30,6 @@ st.markdown(
     "mahasiswa yang masih aktif (**Enrolled**)."
 )
 
-st.info(
-    "💡 **Cara penggunaan**: Masukkan data mahasiswa menggunakan input di bawah, "
-    "lalu klik tombol **Prediksi** untuk mengetahui risiko dropout mahasiswa tersebut.",
-    icon="ℹ️"
-)
-st.divider()
-
 # ── Input Form ────────────────────────────────────────────────────────────────
 st.header("📋 Input Data Mahasiswa")
 
